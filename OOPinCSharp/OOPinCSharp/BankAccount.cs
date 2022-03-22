@@ -2,15 +2,36 @@
 {
     class BankAccount
     {
-        private static ulong _unicNumber;
-        private readonly ulong _number;
-        private decimal _balance;
-        private int _type;
+        private static ulong UnicNumber { get; set; }
+        private ulong Number { get; }
+        public decimal Balance { get; set; }
+        public int Type { get; set; }
 
         public BankAccount()
         {
-            _unicNumber++;
-            _number = _unicNumber;
+            UnicNumber++;
+            Number = UnicNumber;
+        }
+
+        public BankAccount(decimal balance)
+        {
+            UnicNumber++;
+            Number = UnicNumber;
+            Balance = balance;
+        }
+        public BankAccount(int type)
+        {
+            UnicNumber++;
+            Number = UnicNumber;
+            Type = type;
+        }
+
+        public BankAccount(decimal balance, int type)
+        {
+            UnicNumber++;
+            Number = UnicNumber;
+            Balance = balance;
+            Type = type;
         }
 
         public string GetInfo()
@@ -18,15 +39,6 @@
             return ToString();
         }
 
-        public void SetBalance(decimal balance)
-        {
-            _balance = balance;
-        }
-        public void SetType(int type)
-        {
-            _type = type;
-        }
-
-        public override string ToString() => $"Номер счёта: {_number:D20} \nБаланс: {_balance} \nТип счёта: {_type}";
+        public override string ToString() => $"Номер счёта: {Number:D20} \nБаланс: {Balance} \nТип счёта: {Type}";
     }
 }

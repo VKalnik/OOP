@@ -7,11 +7,11 @@ namespace OOPinCSharp
         static void Main(string[] args)
         {
             var account = new BankAccount();
-            var account2 = new BankAccount();
-
-            account.SetBalance(1000);
-            account.SetType(1);
-
+            account.Balance = 10000;
+            account.Type = 10;
+            
+            var account2 = new BankAccount(2000, 2);
+            
             Console.WriteLine(account.GetInfo());
             Console.WriteLine();
             Console.WriteLine(account2.GetInfo());

@@ -6,16 +6,22 @@ namespace OOPinCSharp
     {
         static void Main(string[] args)
         {
-            var account = new BankAccount();
-            account.Balance = 10000;
-            account.Type = 10;
-            
-            var account2 = new BankAccount(2000, 2);
+            var account = new BankAccount(2000, 2);
             
             Console.WriteLine(account.GetInfo());
-            Console.WriteLine();
-            Console.WriteLine(account2.GetInfo());
 
+            account.Put(100);
+
+            Console.WriteLine(account.GetInfo());
+
+            account.Withdraw(500);
+
+            Console.WriteLine(account.GetInfo());
+
+            account.Withdraw(1000000);
+
+            Console.WriteLine(account.GetInfo());
+            
             Console.ReadKey();
         }
     }

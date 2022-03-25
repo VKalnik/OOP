@@ -6,7 +6,9 @@ namespace OOPinCSharp
     {
         static void Main(string[] args)
         {
-            var account = new BankAccount(2000, 2);
+            var account = new BankAccount(2000, BankAccount.AccauntType.credit);
+
+            var accont2 = new BankAccount();
             
             Console.WriteLine(account.GetInfo());
 
@@ -21,7 +23,9 @@ namespace OOPinCSharp
             account.Withdraw(1000000);
 
             Console.WriteLine(account.GetInfo());
-            
+
+            Console.WriteLine(accont2.GetInfo());
+
             Console.ReadKey();
         }
     }

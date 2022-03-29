@@ -68,6 +68,12 @@ namespace OOPinCSharp
             }
         }
 
+        public void Transfer(BankAccount account, decimal sum)
+        {
+            account.Withdraw(sum);
+            Put(sum);
+        }
+
         public override string ToString() => $"Номер счёта: {Number:D20} \nБаланс: {Balance} \nТип счёта: {Type}\n";
     }
 }

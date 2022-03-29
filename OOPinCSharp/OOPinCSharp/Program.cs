@@ -26,6 +26,12 @@ namespace OOPinCSharp
 
             Console.WriteLine(accont2.GetInfo());
 
+            accont2.Transfer(account, 500);
+
+            Console.WriteLine(account.GetInfo());
+
+            Console.WriteLine(accont2.GetInfo());
+
             Console.ReadKey();
         }
     }

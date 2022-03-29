@@ -18,7 +18,7 @@ namespace OOPinCSharp
             deposit,
             credit
         }
-        
+
         public BankAccount()
         {
             UnicNumber++;

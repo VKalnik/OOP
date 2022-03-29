@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Text;
 
 namespace OOPinCSharp
@@ -11,7 +10,7 @@ namespace OOPinCSharp
             var account = new BankAccount(2000, BankAccount.AccauntType.credit);
 
             var accont2 = new BankAccount();
-            
+
             Console.WriteLine(account.GetInfo());
 
             account.Put(100);
@@ -34,21 +33,28 @@ namespace OOPinCSharp
 
             Console.WriteLine(accont2.GetInfo());
 
+
             Console.WriteLine(Reverse("abcde12345"));
 
+            var file = new Files();
+
+            var list = file.ReadEmailFromFile("test.txt");
+
+            file.WriteFile("emails_test.txt", list);
+
             Console.ReadKey();
-
-
-            static string Reverse(string s)
-            {
-                var res = new StringBuilder();
-
-                for (int i = s.Length - 1; i >= 0; --i)
-                {
-                    res.Append(s[i]);
-                }
-                return res.ToString();
-            }
         }
+
+        public static string Reverse(string s)
+        {
+            var res = new StringBuilder();
+
+            for (int i = s.Length - 1; i >= 0; --i)
+            {
+                res.Append(s[i]);
+            }
+            return res.ToString();
+        }
+
     }
 }

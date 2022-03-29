@@ -5,9 +5,19 @@ namespace OOPinCSharp
     class BankAccount
     {
         private static ulong UnicNumber { get; set; }
+
         private ulong Number { get; }
+
         private decimal Balance { get; set; }
-        public int Type { get; set; }
+
+        private AccauntType Type { get; set; }
+
+        internal enum AccauntType
+        {
+            debet,
+            deposit,
+            credit
+        }
 
         public BankAccount()
         {
@@ -21,14 +31,14 @@ namespace OOPinCSharp
             Number = UnicNumber;
             Balance = balance;
         }
-        public BankAccount(int type)
+        public BankAccount(AccauntType type)
         {
             UnicNumber++;
             Number = UnicNumber;
             Type = type;
         }
 
-        public BankAccount(decimal balance, int type)
+        public BankAccount(decimal balance, AccauntType type)
         {
             UnicNumber++;
             Number = UnicNumber;
@@ -56,6 +66,12 @@ namespace OOPinCSharp
             {
                 Console.WriteLine("Баланс на счёте не достаточен для списания запрошенной суммы!");
             }
+        }
+
+        public void Transfer(BankAccount account, decimal sum)
+        {
+            account.Withdraw(sum);
+            Put(sum);
         }
 
         public override string ToString() => $"Номер счёта: {Number:D20} \nБаланс: {Balance} \nТип счёта: {Type}\n";

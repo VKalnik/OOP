@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Text;
 
 namespace OOPinCSharp
 {
@@ -32,7 +34,21 @@ namespace OOPinCSharp
 
             Console.WriteLine(accont2.GetInfo());
 
+            Console.WriteLine(Reverse("abcde12345"));
+
             Console.ReadKey();
+
+
+            static string Reverse(string s)
+            {
+                var res = new StringBuilder();
+
+                for (int i = s.Length - 1; i >= 0; --i)
+                {
+                    res.Append(s[i]);
+                }
+                return res.ToString();
+            }
         }
     }
 }
